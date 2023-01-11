@@ -15,14 +15,19 @@ const images = [
 
 const imgGallery = document.querySelector('.gallery');
 
-images.forEach(el => {
-  imgGallery.insertAdjacentHTML(
-    'beforeend',
-    `<li><img src = "${el.url}" alt = "${el.alt}" width = 600/></li>`
-  );
-});
+// images.forEach(el => {
+//   imgGallery.insertAdjacentHTML(
+//     'beforeend',
+//     `<li><img src = "${el.url}" alt = "${el.alt}" width = 600/></li>`
+//   );
+// });
+
+const markup = images
+  .map(image => `<li><img src=${image.url} width = '600' alt='${image.alt}'></img></li>`)
+  .join('');
+
+imgGallery.insertAdjacentHTML('beforeend', markup);
 
 imgGallery.style = `display: flex;
 flex-direction: column;
 gap: 30px;`;
-// не пойму что нужно сделать (((
