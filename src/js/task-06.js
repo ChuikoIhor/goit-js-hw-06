@@ -26,12 +26,22 @@
 const input = document.querySelector('#validation-input');
 const dataLength = input.getAttribute('data-length');
 console.log(dataLength);
+// input.addEventListener('blur', event => {
+//   if (event.target.value.length < dataLength || event.target.value.length > dataLength) {
+//     input.classList.remove('valid');
+//     input.classList.add('invalid');
+//   } else {
+//     input.classList.remove('invalid');
+//     input.classList.add('valid');
+//   }
+// });
+
 input.addEventListener('blur', event => {
-  if (event.target.value.length < dataLength || event.target.value.length > dataLength) {
-    input.classList.remove('valid');
-    input.classList.add('invalid');
-  } else {
-    input.classList.remove('invalid');
+  const text = event.target.value.length;
+  if (text == dataLength) {
     input.classList.add('valid');
+    input.classList.remove('invalid');
+  } else {
+    input.classList.add('invalid');
   }
 });
