@@ -25,3 +25,4 @@ images.forEach(el => {
 imgGallery.style = `display: flex;
 flex-direction: column;
 gap: 30px;`;
+// не пойму что нужно сделать (((
